@@ -4,8 +4,8 @@ VCloud interface for creating networks
 
 ## Build status
 
-* master:  [![CircleCI](https://circleci.com/gh/ErnestIO/network-creator-vcloud-connector/tree/master.svg?style=svg)](https://circleci.com/gh/ErnestIO/network-creator-vcloud-connector/tree/master)
-* develop: [![CircleCI](https://circleci.com/gh/ErnestIO/network-creator-vcloud-connector/tree/develop.svg?style=svg)](https://circleci.com/gh/ErnestIO/network-creator-vcloud-connector/tree/develop)
+* master:  [![CircleCI](https://circleci.com/gh/ernestio/network-creator-vcloud-connector/tree/master.svg?style=svg)](https://circleci.com/gh/ernestio/network-creator-vcloud-connector/tree/master)
+* develop: [![CircleCI](https://circleci.com/gh/ernestio/network-creator-vcloud-connector/tree/develop.svg?style=svg)](https://circleci.com/gh/ernestio/network-creator-vcloud-connector/tree/develop)
 
 ## Installation
 
