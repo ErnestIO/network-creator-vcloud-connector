@@ -11,8 +11,8 @@ require 'myst'
 include Myst::Providers::VCloud
 
 def dns(data)
-  return ['8.8.8.8', '8.8.4.4'] if data[dns].nil?
-  data[dns]
+  return ['8.8.8.8', '8.8.4.4'] if data[:dns].nil?
+  data[:dns]
 end
 
 def create_network(data)
@@ -28,11 +28,11 @@ def create_network(data)
   router          = datacenter.router(data[:router_name])
 
   private_network_request = PrivateNetwork.new.instantiate(router,
-                                                           data[name],
-                                                           { start_address: data[start_address],
-                                                             end_address:   data[end_address] },
-                                                           data[netmask],
-                                                           data[gateway],
+                                                           data[:name],
+                                                           { start_address: data[:start_address],
+                                                             end_address:   data[:end_address] },
+                                                           data[:netmask],
+                                                           data[:gateway],
                                                            dns(data))
   datacenter.add_private_network(private_network_request)
   'network.create.vcloud.done'
