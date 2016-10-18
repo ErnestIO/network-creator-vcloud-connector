@@ -16,7 +16,7 @@ def dns(data)
 end
 
 def create_network(data)
-  values = data.values_at(:datacenter_name, :client_name, :router_name).compact
+  values = data.values_at(:datacenter_name, :router_name, :name).compact
   return false unless data[:router_type] == 'vcloud' && values.length == 3
 
   credentials = data[:datacenter_username].split('@')
