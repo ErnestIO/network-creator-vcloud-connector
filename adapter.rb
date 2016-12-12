@@ -19,11 +19,13 @@ def create_network(data)
   values = data.values_at(:datacenter_name, :router_name, :name).compact
   return false unless data[:router_type] == 'vcloud' && values.length == 3
 
-  credentials = data[:datacenter_username].split('@')
+  usr = ENV['DT_USR'] || data[:datacenter_username]
+  pwd = ENV['DT_PWD'] || data[:datacenter_password]
+  credentials = usr.split('@')
   provider = Provider.new(endpoint:     data[:vcloud_url],
                           organisation: credentials.last,
                           username:     credentials.first,
-                          password:     data[:datacenter_password])
+                          password:     pwd)
   datacenter      = provider.datacenter(data[:datacenter_name])
   router          = datacenter.router(data[:router_name])
 
